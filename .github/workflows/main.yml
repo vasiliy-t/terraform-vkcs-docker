@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: build docker image
-    runs-on: ubuntu-latest
+    runs-on: arc-runner-set
     steps:
       - name: Checkout repository and submodules
         uses: actions/checkout@v2
@@ -26,5 +26,5 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          push: true
+          push: false
           tags: ghcr.io/vasiliy-t/terraform-vkcs-docker:latest
